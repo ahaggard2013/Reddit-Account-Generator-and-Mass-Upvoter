@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 from selenium import webdriver
+from random import randint
 import time 
 import os
+
 
 
 userNamePasswordFile = 'redditNameList.txt'
@@ -22,13 +24,14 @@ def create_account(username, password):
     browser.set_window_size(683, 744)
     browser.get('http://reddit.com/login')
     #insert username
+    time.sleep(randint(1,5))
     browser.find_element_by_id('user_reg').click()
     browser.find_element_by_id('user_reg').send_keys(username)
     #insert password
-    time.sleep(2)
+    time.sleep(randint(1,5))
     browser.find_element_by_id('passwd_reg').click()
     browser.find_element_by_id('passwd_reg').send_keys(password)
-    time.sleep(2)
+    time.sleep(randint(1,5))
     browser.find_element_by_id('passwd2_reg').click()
     browser.find_element_by_id('passwd2_reg').send_keys(password)
     #pause to manually enter captcha
