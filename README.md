@@ -3,6 +3,9 @@
 This program is the fastest way to generate a mass amount of reddit accounts without using a captcha service or paying for a VPN.
 tools are also included to generate random account names and upvote comments and posts. 
 
+[![Example video](https://img.youtube.com/vi/3SnwAY-RjHA/0.jpg)](https://www.youtube.com/watch?v=3SnwAY-RjHA)
+
+
 ### Prerequisites
 
 Firefox browser.
