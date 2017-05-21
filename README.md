@@ -18,11 +18,10 @@ You must also have selenium installed.
 ```
 pip install selenium
 ```
-This may or may not be an issue for you, but seleinum would not run properly with firefox on my system.  I had to update my geckowebdriver[https://github.com/mozilla/geckodriver/releases].
-by moving the most recent version into /usr/local/bin/.
+This may or may not be an issue for you, but seleinum would not run properly with firefox on my system.  I had to update my [geckowebdriver](https://github.com/mozilla/geckodriver/releases) by moving the most recent version into /usr/local/bin/.
 
 
-### How to use
+### Instructions
 
 #### randomUsernames.py
 
