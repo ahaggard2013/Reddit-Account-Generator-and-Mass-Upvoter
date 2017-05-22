@@ -5,7 +5,7 @@ tools are also included to generate random account names and upvote comments and
 
 [![Example video](https://img.youtube.com/vi/3SnwAY-RjHA/0.jpg)](https://www.youtube.com/watch?v=3SnwAY-RjHA)
 
-
+^^^ youtube example
 ### Prerequisites
 
 Firefox browser.
