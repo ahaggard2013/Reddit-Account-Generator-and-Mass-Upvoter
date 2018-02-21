@@ -46,14 +46,25 @@ def upvote_comment(browser, username, password, commentLink):
     browser.get('http://www.reddit.com')
 
 def main():
-    browser = webdriver.Firefox()
-    browser.get('http://reddit.com')
-
     #comment out post or comment depending on what you'd like to upvote
     creds = [cred.strip() for cred in open(loginFile).readlines()]
     for cred in creds:
         username, password = cred.split(':')
+
+        #set up profile for proxy
+        profile = webdriver.FirefoxProfile()
+        profile.set_preference("network.proxy.type", 1)
+        profile.set_preference("network.proxy.socks", '127.0.0.1')
+        profile.set_preference("network.proxy.socks_port", 9050)
+        profile.set_preference("network.proxy.socks_remote_dns", True)
+        profile.update_preferences()
+        browser = webdriver.Firefox(firefox_profile=profile)
+
         upvote_comment(browser, username,password,commentPermaLink)
         #upvote_post(browser, username, password, postLink)
+
+        browser.quit()
+        print('[+] restarting tor for a new ip address...')
+        os.system('service tor restart')
 
 main()
