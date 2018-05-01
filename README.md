@@ -1,5 +1,9 @@
 # Reddit-Account-Generator-and-Mass-Upvoter
 
+***THIS SCRIPT IS NOW OUT OF DATE
+***looking for someone to update, description here: https://github.com/ahaggard2013/Reddit-Account-Generator-and-Mass-Upvoter/issues/10
+
+
 This program is the fastest way to generate large amounts of Reddit accounts without using a Captcha service or paying for a VPN.
 Tools are also included to generate random account names and upvote comments or posts. 
 
