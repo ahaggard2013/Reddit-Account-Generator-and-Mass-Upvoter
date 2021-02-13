@@ -24,7 +24,7 @@ def upvote_post(browser, username, password, postLink):
     browser.find_element_by_css_selector('div.arrow:nth-child(1)').click()
     browser.find_element_by_css_selector('.logout > a:nth-child(4)').click()
     time.sleep(2)
-    browser.get('http://www.reddit.com')
+    browser.get('http://www.old.reddit.com')
     
 
 def upvote_comment(browser, username, password, commentLink):
@@ -43,11 +43,11 @@ def upvote_comment(browser, username, password, commentLink):
     #logout
     browser.find_element_by_css_selector('.logout > a:nth-child(4)').click()
     time.sleep(2)
-    browser.get('http://www.reddit.com')
+    browser.get('http://www.old.reddit.com')
 
 def main():
     browser = webdriver.Firefox()
-    browser.get('http://reddit.com')
+    browser.get('http://old.reddit.com')
 
     #comment out post or comment depending on what you'd like to upvote
     creds = [cred.strip() for cred in open(loginFile).readlines()]

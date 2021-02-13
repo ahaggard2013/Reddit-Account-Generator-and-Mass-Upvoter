@@ -12,17 +12,18 @@ createdUserNamePasswordFile = 'createdNames.txt'
 
 def create_account(username, password):
     #set up profile for proxy
+    ## port 9051 tor browser by default
     profile = webdriver.FirefoxProfile()
     profile.set_preference("network.proxy.type", 1)
     profile.set_preference("network.proxy.socks", '127.0.0.1')
-    profile.set_preference("network.proxy.socks_port", 9050)
+    profile.set_preference("network.proxy.socks_port", 9051)
     profile.set_preference("network.proxy.socks_remote_dns", True)
     profile.update_preferences()
     browser = webdriver.Firefox(firefox_profile=profile)
 
     #get reddit account creation page
     browser.set_window_size(683, 744)
-    browser.get('http://reddit.com/login')
+    browser.get('http://old.reddit.com/login')
     #insert username
     time.sleep(randint(1,5))
     browser.find_element_by_id('user_reg').click()
