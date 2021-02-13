@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 import random
 import string
+import names
 
 
 def generate_username_password(amount, ulength, plength, list):
     for _ in range(0,amount):
-        list.write(''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(ulength)) + ':'+ ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(plength)) + '\n')
+    	username = names.get_full_name()
+    	username = ''.join(username.split())
+        list.write(username+':'+ ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(plength)) + '\n')
 
         
 list = open('redditNameList.txt', 'w')
