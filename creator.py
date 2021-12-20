@@ -13,30 +13,30 @@ createdUserNamePasswordFile = 'createdNames.txt'
 def create_account(username, password):
     #set up profile for proxy
     profile = webdriver.FirefoxProfile()
-    #profile.set_preference("network.proxy.type", 1)
-    #profile.set_preference("network.proxy.socks", '127.0.0.1')
-    #profile.set_preference("network.proxy.socks_port", 9050)
-    #profile.set_preference("network.proxy.socks_remote_dns", True)
+    profile.set_preference("network.proxy.type", 1)
+    profile.set_preference("network.proxy.socks", '127.0.0.1')
+    profile.set_preference("network.proxy.socks_port", 9050)
+    profile.set_preference("network.proxy.socks_remote_dns", True)
     profile.update_preferences()
     browser = webdriver.Firefox(firefox_profile=profile)
 
     #get reddit account creation page
     browser.set_window_size(683, 744)
-    browser.get('https://www.reddit.com/account/register/')
+    browser.get('http://reddit.com/login')
     #insert username
     time.sleep(randint(1,5))
-    browser.find_element_by_id('loginUsername').click()
-    browser.find_element_by_id('loginUsername').send_keys(username)
+    browser.find_element_by_id('user_reg').click()
+    browser.find_element_by_id('user_reg').send_keys(username)
     #insert password
     time.sleep(randint(1,5))
-    browser.find_element_by_id('loginPassword').click()
-    browser.find_element_by_id('loginPassword').send_keys(password)
+    browser.find_element_by_id('passwd_reg').click()
+    browser.find_element_by_id('passwd_reg').send_keys(password)
     time.sleep(randint(1,5))
     browser.find_element_by_id('passwd2_reg').click()
     browser.find_element_by_id('passwd2_reg').send_keys(password)
     #pause to manually enter captcha
-    some_input = input("[*] Solve captcha, create account, then press enter... enter 'r' as some_input if captcha doesn't appear to skip username" + '\n')
-    if (some_input == 'r'):
+    input = raw_input("[*] Solve captcha, create account, then press enter... enter 'r' as input if captcha doesn't appear to skip username" + '\n')
+    if (input == 'r'):
         os.system('clear')
         browser.quit()
         return False
